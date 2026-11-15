@@ -74,8 +74,8 @@ export const wedding = {
       city: 'Junagadh',
       date: '2027-01-11',
       timeLabel: 'Before Zuhr',
-      start: '11:30',
-      end: '12:30',
+      start: '1:00',
+      end: '2:30',
       note: 'Before Zuhr',
       venue: {
         name: 'Dhal Masjid',
