@@ -3,7 +3,14 @@ const OFFSETS = { 'Asia/Kolkata': '+05:30', 'Asia/Karachi': '+05:00' }
 
 /** "2027-01-22", "19:30" in the venue timezone → Date (an instant). */
 export function zonedToDate(date, time, tz = 'Asia/Kolkata') {
-  return new Date(`${date}T${time}:00${OFFSETS[tz] ?? 'Z'}`)
+  const match = /^(\d{1,2}):(\d{2})$/.exec(time)
+  if (!match) throw new RangeError(`Invalid local time "${time}"; expected H:mm or HH:mm.`)
+  const [, hour, minute] = match
+  if (Number(hour) > 23 || Number(minute) > 59) throw new RangeError(`Invalid local time "${time}".`)
+  const normalizedTime = `${hour.padStart(2, '0')}:${minute}`
+  const result = new Date(`${date}T${normalizedTime}:00${OFFSETS[tz] ?? 'Z'}`)
+  if (!Number.isFinite(result.getTime())) throw new RangeError(`Invalid local date or time "${date} ${time}".`)
+  return result
 }
 
 export function formatGregorian(date) {
