@@ -518,7 +518,7 @@ function EventFacts({ e, extra }) {
     <dl className="facts rv">
       {extra}
       <dt>Time</dt>
-      <dd>{formatTime12(e.start)}{e.id === 'walima' ? ' onwards' : ''}{e.note && <small>{e.note}</small>}</dd>
+      <dd>{e.timeLabel || formatTime12(e.start)}{e.id === 'walima' ? ' onwards' : ''}{e.note && !e.timeLabel && <small>{e.note}</small>}</dd>
       <dt>Venue</dt>
       <dd>{e.venue.name}<small>{e.venue.address}</small></dd>
       {e.hostedBy && (<><dt>Hosted by</dt><dd><V v={e.hostedBy} /></dd></>)}
@@ -929,9 +929,9 @@ export function RegardsSection() {
     <div ref={ref}>
       <Sec id="regards" label="With love and duas">
         <p className="eyebrow rv">With love and duas</p>
-        <p className="regards-fam gold-text rv">The Siddiqui Family</p>
+        <p className="regards-fam gold-text rv">The Siddiqui  Family</p>
         <svg className="sig-line" viewBox="0 0 420 40" aria-hidden="true"><path className="sig" pathLength="1" d="M6 26C60 8 110 34 168 20S262 6 300 22S380 30 414 12" /></svg>
-        <p className="body rv">{gf.en.replace(' Siddiqui', '')} &amp; {parent('groom', 'Mother').en}</p>
+        <p className="body rv">{gf.en.replace(' Siddiqui ', '')} &amp; {parent('groom', 'Mother').en}</p>
         <p className="body rv soft">together with all our relatives and well-wishers</p>
       </Sec>
     </div>
@@ -965,7 +965,7 @@ export function SeeYouSection() {
           {wedding.events.map((e) => (
             <a key={e.id} className="chip" href={`#${e.id}`}>
               <b>{e.name.en}</b>
-              <span>{short(e.date)} · {formatTime12(e.start)}</span>
+              <span>{short(e.date)} · {e.timeLabel || formatTime12(e.start)}</span>
             </a>
           ))}
         </div>

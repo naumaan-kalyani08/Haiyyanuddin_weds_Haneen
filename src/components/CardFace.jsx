@@ -48,7 +48,7 @@ export const CardFace = forwardRef(function CardFace({ size, className = '', sty
       </svg>
       <div className="card-shimmer" aria-hidden="true" />
       <div className="card-stack" style={{ width: L.width }}>
-        <h1 id="card-title" className="sr-only">Nikah invitation: Haiyyanuddin and Haneen</h1>
+        <h1 id="card-title" className="sr-only">Nikah invitation: Haiyyanuddin Siddiqui  and Haneen </h1>
         <p className="cf-script" lang="ar" dir="rtl" style={{ ...font(FONTS.script(L.script.size)), lineHeight: L.script.lh, color: CARD.gold }}>
           {cardText.script}
         </p>

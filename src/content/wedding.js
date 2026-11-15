@@ -25,8 +25,8 @@ export const wedding = {
   siteUrl: FILL('domain'),
 
   couple: {
-    groom: { en: 'Haiyyanuddin', full: 'Haiyyanuddin Siddiqui', script: urdu('Haiyyanuddin') },
-    bride: { en: 'Haneen', full: 'Haneen Siddiqui', script: urdu('Haneen') },
+    groom: { en: 'Haiyyanuddin Siddiqui ', full: 'Haiyyanuddin Siddiqui ', script: urdu('Haiyyanuddin Siddiqui ') },
+    bride: { en: 'Haneen Siddiqui ', full: 'Haneen Siddiqui ', script: urdu('Haneen Siddiqui ') },
     monogram: { latin: 'H & H', script: 'ح ح' },
   },
 
@@ -34,21 +34,24 @@ export const wedding = {
     groom: {
       label: "The groom's family",
       parents: [
-        person('Janab Sarfaraz Siddiqui', urdu('Sarfaraz Siddiqui'), 'Father'),
-        person('Mohtarma Irfat Siddiqui', urdu('Irfat Siddiqui'), 'Mother'),
+        person('Janab Sarfarazuddin Siddiqui ', urdu('Sarfarazuddin Siddiqui '), 'Father'),
+        person('Mohtarma Irfat Siddiqui ', urdu('Irfat Siddiqui '), 'Mother'),
       ],
       grandparents: [
-        person('Fariduddin Siddiqui', urdu('Fariduddin Siddiqui'), 'Grandfather', { deceased: true, gender: 'm' }),
-        person('Hamida Fariduddin Siddiqui', urdu('Hamida Fariduddin Siddiqui'), 'Grandmother', { deceased: true, gender: 'f' }),
+        person('Fariduddin Siddiqui ', urdu('Fariduddin Siddiqui '), 'Grandfather', { deceased: true, gender: 'm' }),
+        person('Hamida Fariduddin Siddiqui ', urdu('Hamida Fariduddin Siddiqui '), 'Grandmother', { deceased: true, gender: 'f' }),
       ],
     },
     bride: {
       label: "The bride's family",
       parents: [
-        person('Janab Irfan Siddiqui', urdu('Irfan Siddiqui'), 'Father'),
-        person('Mohtarma Nargis Siddiqui', urdu('Nargis Siddiqui'), 'Mother'),
+        person('Janab Irfan Siddiqui ', urdu('Irfan Siddiqui '), 'Father'),
+        person('Mohtarma Nargis Siddiqui ', urdu('Nargis Siddiqui '), 'Mother'),
       ],
-      grandparents: [],
+       grandparents: [
+        person(' Mohammed Sadiq Siddiqui ', urdu(' Mohammed Sadiq Siddiqui '), 'Grandfather', { deceased: true, gender: 'm' }),
+        person(' Qamrunnisa Mohammed Sadiq Siddiqui', urdu('Qamrunnisa Mohammed Sadiq Siddiqui '), 'Grandmother', { deceased: true, gender: 'f' }),
+      ],
     },
   },
 
@@ -60,7 +63,7 @@ export const wedding = {
    * The Urdu version has not been supplied for these names.
    */
   invitationWording: {
-    en: 'Janab Sarfaraz & Mohtarma Irfat Siddiqui request the pleasure of your company at the Nikah of their son Haiyyanuddin with Haneen, daughter of Janab Irfan & Mohtarma Nargis Siddiqui.',
+    en: 'Janab Sarfarazuddin Siddiqui  & Mohtarma Irfat Siddiqui  request the pleasure of your company at the Nikah of their son Haiyyanuddin Siddiqui  with Haneen Siddiqui , daughter of Janab Irfan Siddiqui  & Mohtarma Nargis Siddiqui .',
     ur: FILL('Urdu invitation wording for the new names'),
   },
 
@@ -70,10 +73,10 @@ export const wedding = {
       name: { en: 'Nikah', script: 'نکاح' },
       city: 'Junagadh',
       date: '2027-01-11',
-      // Time from the family's approved artifact (after Asr). Confirm.
-      start: '16:30',
-      end: '19:30',
-      note: 'After Asr salah',
+      timeLabel: 'Before Zuhr',
+      start: '11:30',
+      end: '12:30',
+      note: 'Before Zuhr',
       venue: {
         name: 'Dhal Masjid',
         address: 'Junagadh, Gujarat',
